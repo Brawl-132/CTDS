@@ -139,8 +139,7 @@ The application uses environment variables from `.env` for configuration:
 - `MYSQL_DB` - MySQL database name
 - `MYSQL_TABLE` - Orders table name (MySQL only)
 - `BACKUP_INTERVAL` - Backup interval in seconds (default: 1800)
-- `DEBUG` - Enable debug mode (True/False)
-- `LOG_LEVEL` - Logging level (DEBUG, INFO, WARNING, ERROR)
+
 
 **Notes:**
 - SQLite is used by default if `DATABASE_URL` is unset
