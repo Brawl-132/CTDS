@@ -1,0 +1,23 @@
+# VS Code settings
+.vscode/
+
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+
+# Extra folder
+/extra/
+
+# Backup and log folders
+/backups/
+/logs/
+
+# User-uploaded photos
+/static/photos/
+
+.DS_Store
+
+.python-version
+

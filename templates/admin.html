@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - All Orders</title>
+    <link rel="stylesheet" href="/static/admin.css">
+    <link rel="icon" href="/static/favicon.png" type="image/png">
+    
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+        </ul>
+        <ul>
+            <li><a class="download" href="/download">Download</a></li>
+            <li><a class="download" href="/trigger-backup">Backup</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>All Orders Summary</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Roll No</th>
+                    <th>Student Name</th>
+                    <th>Residence</th>
+                    <th>Occupancy</th>
+                    <th>Last Updated</th>
+                    <th>Total Cost</th>
+
+                    {% for item in menu_items %}
+                        <th>{{ item.replace('_', ' ').title() }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td>{{ order.rollno }}</td>
+                    <td>{{ order.studentName }}</td>
+                    <td>{{ order.residence }}</td>
+                    <td>{{ order.occupancy }}</td>
+                    <td>{{ order.last_updated }}</td>
+                    <td>{{ order.total_cost }}</td>
+
+                    {% for item in menu_items %}
+                        <td>{{ order[item] }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

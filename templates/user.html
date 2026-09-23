@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/static/user.css">
+  <link rel="icon" href="/static/favicon.png" type="image/png">
+</head>
+<body>
+  <div class="card">
+    <h2>Welcome {{ name.lower()|capitalize }}</h2>
+    <p><strong>Roll No:</strong> {{ rollno }}</p>
+    <p><strong>Residence:</strong> {{ residence }}</p>
+    <p><strong>Occupancy:</strong> {{ occupancy }}</p>
+    <img src= "{{ photo }}" alt="User Photo">
+    <br>
+    <br>
+    <br>
+    <a class="btn" href="/order_form?rollno={{ rollno }}">Proceed to Order</a>
+  </div>
+</body>
+</html>

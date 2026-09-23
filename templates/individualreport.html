@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Individual Report</title>
+    <link rel="stylesheet" href="/static/admin.css">
+    <link rel="icon" href="/static/favicon.png" type="image/png">
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/admin">All Orders</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        {% if error %}
+            <h2 style="color: red;">{{ error }}</h2>
+        {% else %}
+            <h2>Order Report for {{ name.lower()|capitalize }} ({{ rollno }})</h2>
+            <p><strong>Residence:</strong> {{ residence }} | <strong>Occupancy:</strong> {{ occupancy }}</p>
+            <p><strong>Total Cost:</strong> ₹{{ total_cost }}</p>
+
+            <h3>Order Breakdown</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Entry Total</th>
+                        {% for item, price in MENU_PRICES.items() %}
+                            <th>{{ item.replace("_", " ").title() }}</th>
+                        {% endfor %}
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entry in entries %}
+                    <tr>
+                        <td>{{ entry.last_updated }}</td>
+                        <td>{{ entry.total_cost }}</td>
+                        {% for item, price in MENU_PRICES.items() %}
+                            <td>{{ entry[item] if item in entry else 0 }}</td>
+                        {% endfor %}
+                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+
+</body>
+</html>

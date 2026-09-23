@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Individual Report</title>
+  <link rel="stylesheet" href="/static/login.css">
+  <link rel="icon" href="/static/favicon.png" type="image/png">
+</head>
+<body>
+  <nav class="navbar">
+      <a href="/home">CTDS</a>
+  </nav>
+  <div class="wrapper">
+    <form method="post" action="/report_form">
+      <h2>Individual Report</h2>
+
+      {% if error %}
+      <p class="error">{{ error }}</p>
+      {% endif %}
+
+      <div class="input-field">
+        <label for="rollno" style="display: none;">Roll Number</label>
+        <input type="text" name="rollno" id="rollno" placeholder="Enter Roll Number" required />
+      </div>
+
+      <button type="submit">Generate Report</button>
+    </form>
+  </div>
+</body>
+</html>

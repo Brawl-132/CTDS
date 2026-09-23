@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Item Input</title>
+    <link rel="stylesheet" href="/static/aup.css">
+    <link rel="icon" href="/static/favicon.png" type="image/png">
+
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/home">Home</a></li>
+        </ul>
+    </nav>
+
+    <h2>Enter Food Items</h2>
+
+    <form id="orderForm" action="/auc" method="POST">
+        <input type="hidden" name="rollno" value="{{ rollno }}"> <!-- Add hidden roll number -->
+
+        <div class="fooditems"><div class="frankie">       
+            <!-- Frankie section with dropdown for types -->
+            <details open>
+            <summary>Frankie</summary>
+            <label for="cheese roll">Cheese Roll:</label><br>
+            <input type="number" id="cheese_roll" name="cheese_roll" value="0" min="0"><br><br>
+
+            <label for="paneer tika">Paneer Tikka:</label><br>
+            <input type="number" id="paneer_tikka" name="paneer_tikka" value="0"min="0"><br><br>
+            
+            <label for="schezwan paneer">Schezwan Paneer:</label><br>
+            <input type="number" id="schezwan_paneer" name="schezwan_paneer" value="0"min="0"><br><br>
+
+            <label for="extra cheese">Extra Cheese:</label><br>
+            <input type="number" id="extra_cheese" name="extra_cheese" value="0"min="0"><br><br>
+        </details></div>
+
+
+        <div class="brownie_soda"> 
+            <!-- Brownie and Soda section -->
+            <details open>
+                <summary>Brownie and Soda</summary>
+                <label for="normal brownie">Normal Brownie:</label><br> 
+                <input type="number" id="normal_brownie" name="normal_brownie" value="0"min="0"><br><br>
+    
+                <label for="brownie with icecream">Brownie With Ice Cream:</label><br> 
+                <input type="number" id="brownie_with_icecream" name="brownie_with_icecream" value="0"min="0"><br><br>
+    
+                <label for="lime juice">Lime Juice:</label><br> 
+                <input type="number" id="lime_juice" name="lime_juice" value="0"min="0"><br><br>
+    
+                <label for="lemon_soda">Lemon Soda:</label><br>
+                <input type="number" id="lemon_soda" name="lemon_soda" value="0"min="0"><br><br>
+            </details></div>
+       
+        <div class="Pizza"><!-- Pizzas section -->
+            <details open>
+                <summary>Pizzas</summary>
+                <label for="margherita">Margherita:</label><br>
+                <input type="number" id="margherita" name="margherita" value="0"min="0"><br><br>
+    
+                <label for="peppy_paneer">Peppy Paneer:</label><br>
+                <input type="number" id="peppy_paneer" name="peppy_paneer" value="0"min="0"><br><br>
+    
+                <label for="farmhouse">Farmhouse:</label><br>
+                <input type="number" id="farmhouse" name="farmhouse" value="0"min="0"><br><br>
+    
+                <label for="choco_lava_cake">Choco Lava Cake:</label><br>
+                <input type="number" id="choco_lava_cake" name="choco_lava_cake" value="0"min="0"><br><br>
+            </details>
+        </div>
+        <div class="fries_nuggets">
+            <!-- Fries and Nuggets section -->
+            <details open>
+                <summary>Fries and Nuggets</summary>
+                <label for="french fries">French Fries:</label><br>
+                <input type="number" id="french_fries" name="french_fries" value="0"min="0"><br><br>
+    
+                <label for="cheese nuggets">Cheese Nuggets:</label><br>
+                <input type="number" id="cheese_nuggets" name="cheese_nuggets" value="0"min="0"><br><br>
+            </details>
+        </div>
+        
+        <div class="crisps">        
+            <!-- Crisps section -->
+            <details open>
+                <summary>Crisps</summary>
+                <label for="corn">Corn:</label><br>
+                <input type="number" id="corn" name="corn" value="0"min="0"><br><br>
+    
+                <label for="spiral_potato">Spiral Potato:</label><br>
+                <input type="number" id="spiral_potato" name="spiral_potato" value="0"min="0"><br><br>
+            </details>
+        </div> 
+
+        <div class="kulfi">        
+            <!-- Kulfi section -->
+            <details open>
+                <summary>Ice Cream:</summary>
+                <label for="rabadi_kulfi">Rabadi Kulfi:</label><br>
+                <input type="number" id="rabadi_kulfi" name="rabadi_kulfi" value="0"min="0"><br><br>
+    
+                <label for="shahi_gulab">Shahi Gulab:</label><br>
+                <input type="number" id="shahi_gulab" name="shahi_gulab" value="0"min="0"><br><br>
+    
+                <label for="strawberry">Strawberry:</label><br>
+                <input type="number" id="strawberry" name="strawberry" value="0"min="0"><br><br>
+    
+                <label for="choclate">Chocolate:</label><br>
+                <input type="number" id="choclate" name="choclate" value="0"min="0"><br><br>
+                
+                <label for="pista_badam">Pista Badam:</label><br>
+                <input type="number" id="pista_badam" name="pista_badam" value="0"min="0"><br><br>
+            
+                <label for="malai_kulfi">Malai Kulfi:</label><br>
+                <input type="number" id="malai_kulfi" name="malai_kulfi" value="0"min="0"><br><br>
+            </details>
+        </div>
+</div>
+        <div class="sub">
+            <br><input type="submit" id="submitBtn" value="Submit">
+        </div>
+        <br>
+    </form>
+
+    <script>
+        const form = document.getElementById("orderForm");
+        const button = document.getElementById("submitBtn");
+
+        form.addEventListener("submit", function() {
+            button.disabled = true;  // disable button
+            button.value = "Submitting...";  // feedback
+        });
+    </script>
+
+</body>
+</html>

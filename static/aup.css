@@ -1,0 +1,140 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #eef1f5; /* Light grey background for a modern feel */
+    color: #333; /* Darker text for better readability */
+}
+.navbar {
+    background-color: #2c3e50; /* A darker, more professional color */
+    border-radius: 0; /* Remove border radius for a clean, full-width bar */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+}
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: auto; /* Allow the list to size based on content */
+}
+.navbar li {
+    margin-right: 20px; /* Add some space between list items */
+}
+.navbar a {
+    text-decoration: none;
+    color: #ecf0f1; /* Light text for contrast */
+    display: block;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s; /* Add color transition for a smoother effect */
+    border-radius: 5px;
+}
+.navbar a:hover {
+    background-color: #34495e; /* Slightly lighter shade on hover */
+    color: #fff;
+}
+h2 {
+    text-align: center;
+    color: #2c3e50; /* Match the navbar color */
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+form {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.fooditems {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Use grid for a responsive, organized layout */
+    gap: 20px; /* Consistent spacing between food item sections */
+    margin-bottom: 20px;
+}
+details {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+    transition: box-shadow 0.3s;
+}
+details:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* subtle shadow on hover */
+}
+details > summary {
+    list-style: none;
+    padding: 15px 20px;
+    background-color: #f1f3f5;
+    border: none;
+    border-radius: 8px 8px 0 0;
+    box-shadow: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #444;
+    position: relative;
+}
+details[open] > summary {
+    border-radius: 8px 8px 0 0;
+    background-color: #e2e6eb;
+}
+details > summary::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    font-size: 1.2em;
+    line-height: 1;
+    transition: transform 0.4s;
+}
+details[open] > summary::after {
+    content: '−';
+    transform: rotate(180deg);
+}
+details > *:not(summary) {
+    padding: 10px 20px;
+}
+label {
+    display: block;
+    margin-top: 5px;
+    font-weight: 600;
+    color: #555;
+}
+input[type="number"] {
+    width: calc(100% - 22px); /* Adjust width to account for padding and border */
+    height: auto; /* Remove fixed height for better control */
+    padding: 10px;
+    margin-top: 5px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Important for consistent sizing */
+    transition: border-color 0.3s;
+}
+input[type="number"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+input[type="submit"] {
+    width: 150px; /* Make the button a bit wider */
+    height: 50px;
+    background-color: rgb(0, 15, 99); /* A more inviting green color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 20px auto 0;
+    display: block; /* Center the button */
+}
+input[type="submit"]:hover {
+    background-color: #007BFF;
+    transform: translateY(-2px); /* A slight lift effect on hover */
+}
+input[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
