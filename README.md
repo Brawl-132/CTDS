@@ -96,10 +96,11 @@ CTDS/
    DATABASE_URL=sqlite:///orders.db
    ```
    
-   For MySQL configuration, use:
+   For MySQL configuration (Recomended), use:
    ```bash
-   DATABASE_URL=mysql+pymysql://root:root@localhost:3306/baabu
-   MYSQLDUMP_PATH="/path/to/mysqldump"
+   DATABASE_URL=mysql+pymysql://root:root@localhost:3306/baabu 
+   MYSQLDUMP_PATH="C:/Program Files/MySQL/MySQL Server 8.0/bin/mysqldump.exe"
+   #These are just examples, please set the appropriate paths according to the systems
    MYSQL_USER="root"
    MYSQL_PASSWORD="root"
    MYSQL_DB="baabu"
@@ -108,7 +109,7 @@ CTDS/
    ```
 
 
-5. [!WARNING]**Prepare student data**
+5. **Prepare student data**
    - Create a `Rollno.xlsx` file in the root directory with the following columns:
      - `rollno`: Student roll number (string)
      - `studentName`: Full name of student
@@ -264,22 +265,3 @@ The Dash dashboard (`/dashboard/`) provides:
 - Automatic refresh every 10 seconds
 - Visual representation of popular food items
 - Responsive design
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a pull request
-
-## License
-
-This project is proprietary and confidential. All rights reserved.
-
-## Contact
-
-For questions or support, please contact the development team.
-
----
-*Documentation generated on 2026-09-23*
