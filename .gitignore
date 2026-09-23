@@ -21,3 +21,8 @@ __pycache__/
 
 .python-version
 
+#Rollno-list
+Rollno.xlsx
+
+#SQLite-Database
+Orders.db
